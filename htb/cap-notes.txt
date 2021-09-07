@@ -1,0 +1,44 @@
+PING 10.10.10.245 (10.10.10.245) 56(84) bytes of data.
+64 bytes from 10.10.10.245: icmp_seq=1 ttl=63 time=11.6 ms
+
+Linux
+
+PORT   STATE SERVICE
+21/tcp open  ftp
+nathan
+Buck3tH4TF0RM3!
+220 (vsFTPd 3.0.3)
+USER nathan
+331 Please specify the password.
+PASS Buck3tH4TF0RM3!
+230 Login successful.
+ec6233cba30e6a7a296cce5e5bee6863
+
+22/tcp open  ssh
+ssh  nathan
+331 Please specify the password.
+PASS Buck3tH4TF0RM3!
+
+80/tcp open  http
+http://cap.htb
+http://cap.htb/download/25
+3ad37ddb8fad5d769e0df74c7678ba15  25.pcap
+ zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"]
+
+---- Scanning URL: http://cap.htb/ ----
++ http://cap.htb/data (CODE:302|SIZE:208)                                                                               
++ http://cap.htb/ip (CODE:200|SIZE:17466)                                                                               
++ http://cap.htb/netstat (CODE:200|SIZE:32018)     
+
+gobuster dir -u http://cap.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
+gobuster dir -u http://cap.htb -w  /usr/share/wordlists/SecLists/Discovery/Web-Content/big.txt -x php -l 
+gobuster dir -u http://cap.htb -w  /usr/share/wordlists/SecLists/Discovery/Web-Content/big.txt -x txt -l
+
+http://cap.htb/download/1
+
+PrivEsc
+passwd file: /etc/pam.d/passwd                                                                                                                  passwd file: /usr/share/bash-completion/completions/passwd
+passwd file: /usr/share/lintian/overrides/passwd
+/usr/bin/python3.8 = cap_setuid,cap_net_bind_service+eipe
+
