@@ -1,0 +1,18 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://bounty.htb
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2021/08/10 17:26:55 Starting gobuster in directory enumeration mode
+===============================================================
+/resources            (Status: 301) [Size: 312] [--> http://bounty.htb/resources/]
+/assets               (Status: 301) [Size: 309] [--> http://bounty.htb/assets/]   
+/css                  (Status: 301) [Size: 306] [--> http://bounty.htb/css/]      
+/js                   (Status: 301) [Size: 305] [--> http://bounty.htb/js/]       
