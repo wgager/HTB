@@ -1,0 +1,150 @@
+# Nmap 7.91 scan initiated Sat Jun 26 23:03:00 2021 as: nmap -vv --reason -Pn -sV -p 80 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN /root/Desktop/results/knife.htb/scans/tcp_80_http_nmap.txt -oX /root/Desktop/results/knife.htb/scans/xml/tcp_80_http_nmap.xml knife.htb
+Nmap scan report for knife.htb (10.10.10.242)
+Host is up, received user-set (0.0100s latency).
+Scanned at 2021-06-26 23:03:01 EDT for 17s
+
+PORT   STATE SERVICE REASON         VERSION
+80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.41 ((Ubuntu))
+|_http-chrono: Request times for /; avg: 175.33ms; min: 163.00ms; max: 193.86ms
+| http-comments-displayer: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=knife.htb
+|     
+|     Path: http://knife.htb:80/
+|     Line number: 198
+|     Comment: 
+|         
+|         
+|     
+|     Path: http://knife.htb:80/
+|     Line number: 187
+|     Comment: 
+|         
+|     
+|     Path: http://knife.htb:80/
+|     Line number: 201
+|     Comment: 
+|         
+|         
+|     
+|     Path: http://knife.htb:80/
+|     Line number: 65
+|     Comment: 
+|         /* Shadows are visible under slightly transparent text color */
+|     
+|     Path: http://knife.htb:80/
+|     Line number: 20
+|     Comment: 
+|         /*background: rgb(50, 120, 186);*/
+|     
+|     Path: http://knife.htb:80/
+|     Line number: 204
+|     Comment: 
+|         
+|         
+|     
+|     Path: http://knife.htb:80/
+|     Line number: 212
+|     Comment: 
+|         
+|         
+|     
+|     Path: http://knife.htb:80/
+|     Line number: 210
+|     Comment: 
+|         
+|         
+|     
+|     Path: http://knife.htb:80/
+|     Line number: 207
+|     Comment: 
+|         
+|_        
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-date: Sun, 27 Jun 2021 03:14:31 GMT; +11m23s from local time.
+|_http-devframework: Couldn't determine the underlying framework or CMS. Try increasing 'httpspider.maxpagecount' value to spider more pages.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-drupal-enum: Nothing found amongst the top 100 resources,use --script-args number=<number|all> for deeper analysis)
+| http-enum: 
+|_  /icons/: Potentially interesting folder
+|_http-errors: Couldn't find any error pages.
+|_http-feed: Couldn't find any feeds.
+|_http-fetch: Please enter the complete path of the directory to save data in.
+| http-headers: 
+|   Date: Sun, 27 Jun 2021 03:14:32 GMT
+|   Server: Apache/2.4.41 (Ubuntu)
+|   X-Powered-By: PHP/8.1.0-dev
+|   Connection: close
+|   Content-Type: text/html; charset=UTF-8
+|   
+|_  (Request type: HEAD)
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-malware-host: Host appears to be clean
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-mobileversion-checker: No mobile version detected.
+| http-php-version: Logo query returned unknown hash 754a752a6e03487c5752fe171752b0fc
+| Credits query returned unknown hash 754a752a6e03487c5752fe171752b0fc
+|_Version from header x-powered-by: PHP/8.1.0-dev
+| http-referer-checker: 
+| Spidering limited to: maxpagecount=30
+|_  https://cpwebassets.codepen.io:443/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js
+|_http-security-headers: 
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+| http-sitemap-generator: 
+|   Directory structure:
+|     /
+|       Other: 1
+|   Longest directory structure:
+|     Depth: 0
+|     Dir: /
+|   Total files found (by extension):
+|_    Other: 1
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-title:  Emergent Medical Idea
+| http-traceroute: 
+|   HTML title
+|     Hop #1: 400 Proxy Error
+|     Hop #2:  Emergent Medical Idea
+|     Hop #3:  Emergent Medical Idea
+|   Status Code
+|     Hop #1: 400
+|     Hop #2: 200
+|     Hop #3: 200
+|   content-type
+|     Hop #1: text/html; charset=iso-8859-1
+|     Hop #2: text/html; charset=UTF-8
+|     Hop #3: text/html; charset=UTF-8
+|   content-length
+|     Hop #1: 421
+|     Hop #2
+|_    Hop #3
+| http-useragent-tester: 
+|   Status for browser useragent: 200
+|   Allowed User Agents: 
+|     Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+|     libwww
+|     lwp-trivial
+|     libcurl-agent/1.0
+|     PHP/
+|     Python-urllib/2.5
+|     GT::WWW
+|     Snoopy
+|     MFC_Tear_Sample
+|     HTTP::Lite
+|     PHPCrawl
+|     URI::Fetch
+|     Zend_Http_Client
+|     http client
+|     PECL::HTTP
+|     Wget/1.13.4 (linux-gnu)
+|_    WWW-Mechanize/1.34
+| http-vhosts: 
+|_128 names had status 200
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_http-wordpress-enum: Nothing found amongst the top 100 resources,use --script-args search-limit=<number|all> for deeper analysis)
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Jun 26 23:03:18 2021 -- 1 IP address (1 host up) scanned in 17.68 seconds

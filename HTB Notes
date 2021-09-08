@@ -1,0 +1,26 @@
+Network Scans
+
+	nmap -sT -Pn hostname
+	nmap -sC -sV hostname
+	
+	*Autorecon*
+	Install --- sudo python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git
+	Full Scan --- autorecon hostname
+
+Reverse Shells
+
+	python3 reverse-me.py --fast
+	
+Web Discovery 
+
+	dirb hostname
+	gobuster dir -u http://staging.love.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+	nikto -host hostname
+	
+
+
+Web Server/Proxy
+
+	python3 -m http.server 		443                                                                                                                                              2 ⨯
+	burpsuit
+
